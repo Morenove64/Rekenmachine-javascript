@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+	<head>
+	<title> Rekenmachine</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="Rekenmachine2.css">
+		<script type="text/javascript">
+			function plus()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				var uit = WX + WY;
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+			
+			function min()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				var uit = WX - WY;
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+			
+			function keer()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				var uit = WX * WY;
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+				function delen()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);  
+				if(WY == 0){
+				uit = "Je kan niet delen door 0";
+				}
+				else {
+				var uit = WX / WY;
+				}
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+				function kwadraat()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				var uit = WX * WX;
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+				function wortel()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				if(WX < 0){
+				uit = "Dit kan niet";
+				}
+				else{
+				var uit = Math.sqrt(WX);
+				}
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+				function tafel()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var getal = WX;
+				for (var teller = 1; teller <=10; teller++)
+				{
+					document.getElementById('uitkomst').innerHTML += 
+					getal+ 'x' + teller + '=' + getal * teller + '<br/>';
+				}
+				
+			}
+				function macht()
+			{
+				var WX = parseFloat(document.getElementById('X').value);
+				var WY = parseFloat(document.getElementById('Y').value);
+				var uit = WX ** WY; 
+				document.getElementById('uitkomst').innerHTML='Uitkomst is: ' + uit;
+			}
+			
+		</script>
+	</head>
+
+	<body>
+	<div id="rekenmachine">
+		X: <input type="text" class="invoer" id="X"><br>
+		Y: <input type="text" class="invoer" id="Y"><br><br>
+		
+		<button class="knop" onclick="plus()">+</button>
+		<button class="knop" onclick="min()">-</button>
+		<button class="knop" onclick="keer()">*</button>
+		<button class="knop" onclick="delen()">/</button>
+		<button class="knop" onclick="kwadraat()">x2</button>
+		<button class="knop" onclick="wortel()">Vx</button>
+		<button class="knop" onclick="tafel()">Tx</button>
+		<button class="knop" onclick="macht()">xY</button>
+	</div>
+	
+	<div id="uitkomst"></div>
+	</body>
+</html>
